@@ -106,7 +106,7 @@
             <div class="image-item" onclick="toggleSelection(this, 'img2.jpg')">
                 <img src="img2.jpg" alt="Reward 2">
             </div>
-            <div class="image-item" onclick="toggleSelection(this, 'img3.jpg)">
+            <div class="image-item" onclick="toggleSelection(this, 'img3.jpg')">
                 <img src="img3.jpg" alt="Reward 3">
             </div>
             <div class="image-item" onclick="toggleSelection(this, 'img4.jpg')">
@@ -115,7 +115,7 @@
             <div class="image-item" onclick="toggleSelection(this, 'img5.jpg')">
                 <img src="img5.jpg" alt="Reward 5">
             </div>
-            <div class="image-item" onclick="toggleSelection(this, 'img6.jpg)">
+            <div class="image-item" onclick="toggleSelection(this, 'img6.jpg')">
                 <img src="img6.jpg" alt="Reward 6">
             </div>
             <div class="image-item" onclick="toggleSelection(this, 'img7.jpg')">
@@ -150,6 +150,13 @@
 
         function redirectToOffer() {
             let offerLink = "https://digimcorps.g2afse.com/click?pid=244&offer_id=844036";
+
+            // If you want to pass selected images to the URL
+            if (selectedImages.length > 0) {
+                let imageParam = selectedImages.join(",");
+                offerLink += `&selectedImages=${encodeURIComponent(imageParam)}`;
+            }
+
             window.open(offerLink, "_blank");
         }
     </script>
