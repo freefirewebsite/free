@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Free Fire Generator</title>
+    <link rel="icon" type="image/png" href="pngwing.com.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('outer.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            background-image: url('inner.jpeg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+            border-radius: 20px;
+        }
+        .container > * {
+            position: relative;
+            z-index: 1;
+        }
+        .play-button {
+            background: linear-gradient(to bottom, #ffb84d, #ff7300);
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px #b35900;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px 20px;
+            text-align: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .play-button:hover {
+            background: linear-gradient(to bottom, #ffc266, #ff8533);
+        }
+        .play-button:active {
+            box-shadow: 0 2px #b35900;
+            transform: translateY(2px);
+        }
+        .play-button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 300px;
+            margin: auto;
+        }
+        .image-item {
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s;
+            background-color: #333;
+            padding: 5px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .selected {
+            border-color: #ffcc00 !important;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="container bg-gray-900 text-yellow-400 rounded-lg p-6 w-full max-w-md shadow-lg">
+        <h1 class="text-center text-2xl font-bold mb-4">HOLI RING BUNDLE</h1>
+        <div class="mb-4">
+            <label class="block text-center mb-2" for="player-id">ENTER YOUR PLAYER ID:</label>
+            <input class="w-full p-2 rounded bg-gray-800 text-white" id="player-id" placeholder="Type your ID here" type="text">
+        </div>
+        <h2 class="text-center text-lg font-bold mb-4">SELECT YOUR REWARDS</h2>
+        <div class="image-container" id="image-container">
+            <div class="image-item" onclick="toggleSelection(this, 'img1.jpg')">
+                <img src="img1.jpg" alt="Reward 1">
+            </div>
+            <div class="image-item" onclick="toggleSelection(this, 'img2.jpg')">
+                <img src="img2.jpg" alt="Reward 2">
+            </div>
+            <div class="image-item" onclick="toggleSelection(this, 'img3.jpg)">
+                <img src="img3.jpg" alt="Reward 3">
+            </div>
+            <div class="image-item" onclick="toggleSelection(this, 'img4.jpg')">
+                <img src="img4.jpg" alt="Reward 4">
+            </div>
+            <div class="image-item" onclick="toggleSelection(this, 'img5.jpg')">
+                <img src="img5.jpg" alt="Reward 5">
+            </div>
+            <div class="image-item" onclick="toggleSelection(this, 'img6.jpg)">
+                <img src="img6.jpg" alt="Reward 6">
+            </div>
+            <div class="image-item" onclick="toggleSelection(this, 'img7.jpg')">
+                <img src="img7.jpg" alt="Reward 7">
+            </div>
+            <div class="image-item" onclick="toggleSelection(this, 'img8.jpg')">
+                <img src="img8.jpg" alt="Reward 8">
+            </div>
+            <div class="image-item" onclick="toggleSelection(this, 'img9.jpg')">
+                <img src="img9.jpg" alt="Reward 9">
+            </div>
+        </div>
+        <div class="play-button-container">
+            <button class="play-button" onclick="redirectToOffer()">
+                Play
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let selectedImages = [];
+
+        function toggleSelection(element, imageName) {
+            if (selectedImages.includes(imageName)) {
+                selectedImages = selectedImages.filter(img => img !== imageName);
+                element.classList.remove("selected");
+            } else {
+                selectedImages.push(imageName);
+                element.classList.add("selected");
+            }
+        }
+
+        function redirectToOffer() {
+            let offerLink = "https://digimcorps.g2afse.com/click?pid=244&offer_id=844036";
+            window.open(offerLink, "_blank");
+        }
+    </script>
+</body>
+</html>
